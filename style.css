@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.125rem;
+    color: #333;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 8.5in;
+    margin: 0 auto;
+    background: white;
+    padding: 0.5in;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-height: 11in;
+}
+
+/* Header */
+header {
+    font-family: Bitter , Georgia, 'Times New Roman', serif;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 1.3em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.contact-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-row span {
+    flex: 1;
+}
+
+.contact a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.contact i {
+    color: #555;
+}
+
+section {
+    margin-top: 20px;
+}
+h2 {
+    border-bottom: 2px solid #ccc;
+    font-family: 'Bitter', Georgia, serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #777777;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Skills */
+.skill-category {
+    display: flex;
+    align-items: flex-start;
+}
+
+.skill-category h3.category-badge {
+    flex-shrink: 0;
+    font-family: Bitter , Georgia, 'Times New Roman', serif;
+    font-size: .9em;
+    font-weight: 500;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 4px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.skill-category p {
+    flex: 1;
+    margin: 0 0 0 5px;
+}
+
+/* Experience */
+
+.job + .job {
+    margin-top: 15px;
+}
+
+.job-header {
+    display: flex;
+    font-family: Bitter , Georgia, 'Times New Roman', serif;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.job-header h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.job-header > div:first-child {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-right: 10px;
+}
+
+.company {
+    font-weight: 500;
+    color: #0066cc;
+}
+
+.company a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.industry {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.job-meta {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.location {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.dates {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: 500;
+}
+
+.job ul {
+    list-style-position: outside;
+    margin-left: 15px;
+}
+
+.degree-header {
+    display: flex;
+    font-family: Bitter , Georgia, 'Times New Roman', serif;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.degree h3 {
+    font-family: Bitter , Georgia, 'Times New Roman', serif;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.school {
+    color: #0066cc;
+    font-weight: 500;
+}
+
+section.education {
+    margin-bottom: 20px;
+}
+
+/* Mobile: stack contact items into a single column */
+@media screen and (max-width: 800px) {
+    .contact-row {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .contact-row span {
+        flex: 0 0 100%;
+    }
+
+    .job-header, .degree-header {
+        flex-direction: column;
+    }
+
+    .job-meta {
+        text-align: left;
+    }
+}
+
+
+/* Print Styles */
+@media print {
+    @page {
+        margin: 0.5in;
+        size: letter;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+        margin: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        color-adjust: exact;
+    }
+
+    .container {
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .job-header {
+        page-break-after: avoid;
+    }
+
+    .job ul {
+        page-break-before: avoid;
+    }
+}
